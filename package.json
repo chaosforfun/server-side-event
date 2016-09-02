@@ -1,6 +1,6 @@
 {
   "name": "server-side-event",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a lib for node to send w3c server side event",
   "main": "index.js",
   "scripts": {

@@ -1,0 +1,24 @@
+{
+  "name": "server-side-event",
+  "version": "1.0.0",
+  "description": "a lib for node to send w3c server side event",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaosforfun/server-side-event.git"
+  },
+  "keywords": [
+    "server",
+    "side",
+    "event"
+  ],
+  "author": "chaos.forfun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chaosforfun/server-side-event/issues"
+  },
+  "homepage": "https://github.com/chaosforfun/server-side-event#readme"
+}

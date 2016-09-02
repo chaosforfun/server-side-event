@@ -4,7 +4,7 @@
 let http = require('http');
 let sse = require('../index.js')(10000);// the retry time, default 15 second , unit ms
 let fs = require('fs');
-var client = fs.readFileSync('./client.html', 'utf-8');
+var client = fs.readFileSync(__dirname + '/client.html', 'utf-8');
 
 http.createServer(function (req, res) {
     console.log(req.url);
@@ -26,3 +26,5 @@ http.createServer(function (req, res) {
         res.end();
     }
 }).listen('8808');
+
+console.log('please open localhost:8808 and chrome dev tool');

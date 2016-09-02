@@ -4,7 +4,7 @@
   "description": "a lib for node to send w3c server side event",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node test/server.js"
   },
   "repository": {
     "type": "git",

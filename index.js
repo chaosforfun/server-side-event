@@ -7,7 +7,7 @@
  * @return {Function}
  * */
 module.exports = function InitSSE({retry}) {
-    var retry = retry || 15000;
+    retry = retry || 15000;
 
     /**
      * add push function to res
@@ -39,7 +39,7 @@ module.exports = function InitSSE({retry}) {
         // then use res.sse to send to the client
 
         // res.write(':' + Array(2049).join(' ') + '\n');
-        res.write('retry: 2000\n\n');
+        res.write('retry: ' + retry + '\n\n');
 
         // keep the connection open by sending a comment
         var keepAlive = setInterval(function () {

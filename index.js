@@ -6,7 +6,7 @@
  * @param {Number} retry - retry time default 15000 ms
  * @return {Function}
  * */
-module.exports = function InitSSE({retry}) {
+module.exports = function InitSSE(retry) {
     retry = retry || 15000;
 
     /**
@@ -42,7 +42,7 @@ module.exports = function InitSSE({retry}) {
         res.write('retry: ' + retry + '\n\n');
 
         // keep the connection open by sending a comment
-        var keepAlive = setInterval(function () {
+        var keepAlive = setInterval(function () {``
             if (res.finished) {
                 clearInterval(keepAlive);
                 return

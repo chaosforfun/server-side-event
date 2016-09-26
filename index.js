@@ -27,12 +27,12 @@ module.exports = function InitSSE({retry}) {
                 data = JSON.stringify(data);
             }
             if (event) {
-                res.write('event: ' + event + '\n')
+                saveWrite(res, 'event: ' + event + '\n');
             }
             if (id !== undefined) {
-                res.write('id: ' + id + '\n')
+                saveWrite(res, 'id: ' + id + '\n');
             }
-            res.write("data: " + data + "\n\n");
+            saveWrite(res, 'data: ' + data + '\n\n');
         };
 
         // write 2kB of padding (for IE) and a reconnection timeout
@@ -56,3 +56,10 @@ module.exports = function InitSSE({retry}) {
         });
     };
 };
+
+function saveWrite(res, str) {
+    if(res.finished) {
+        return false;
+    }
+    res.write(str);
+}

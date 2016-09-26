@@ -2,8 +2,9 @@
  * Created by zhaosc on 9/2/16.
  */
 let http = require('http');
-let sse = require('../index.js')(10000);// the retry time, default 15 second , unit ms
 let fs = require('fs');
+
+let sse = require('../index.js')(10000);// the retry time, default 15 second , unit ms
 var client = fs.readFileSync(__dirname + '/client.html', 'utf-8');
 
 http.createServer(function (req, res) {

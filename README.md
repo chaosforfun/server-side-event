@@ -20,7 +20,7 @@ node server side event
             setInterval(function () {
                 res.push({o: true, i: i});
                 res.push('s ' + i);
-                res.push('test' + i++, 'test');
+                res.push('test' + i, 'test');
                 res.push('message' + i++, 'message');
             }, 3000)
         } else {
@@ -39,7 +39,7 @@ node server side event
         
         res.push({o: true, i: i});
         res.push('s ' + i);
-        res.push('test' + i++, 'test');
+        res.push('test' + i, 'test');
         res.push('message' + i++, 'message');
     })
     app.listen(8808)

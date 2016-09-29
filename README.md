@@ -1,4 +1,4 @@
-# server-side-event
+# server-side-event [![build status](https://travis-ci.org/chaosforfun/server-side-event.svg?branch=master)](https://travis-ci.org/chaosforfun/server-side-event)
 
 node server side event
 

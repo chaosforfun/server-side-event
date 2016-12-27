@@ -16,6 +16,7 @@ module.exports = function InitSSE(retry) {
     return function sse(res) {
         res.socket.setKeepAlive(true);
         res.socket.setTimeout(0);
+        res.socket.setNoDelay();
         res.setHeader('Content-Type', 'text/event-stream');
         res.setHeader('Cache-Control', 'no-cache');
         res.setHeader('Connection', 'keep-alive');

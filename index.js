@@ -6,9 +6,9 @@
  * @param {Number} retry - retry time default 15000 ms
  * @return {Function}
  * */
-module.exports = function InitSSE(retry) {
+module.exports = function InitSSE(retry, maxBuffer) {
     retry = retry || 15000;
-
+    maxBuffer = maxBuffer || 1024 * 1024
     /**
      * add push function to res
      * @param {Response} res - express res or standard http response
@@ -59,8 +59,9 @@ module.exports = function InitSSE(retry) {
 };
 
 function saveWrite(res, str) {
-    if(res.finished) {
+    if (res.finished) {
         return false;
     }
+    if (res.socket.bufferSize > maxBuffer) return;
     res.write(str);
 }

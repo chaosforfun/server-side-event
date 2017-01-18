@@ -28,12 +28,12 @@ module.exports = function InitSSE(retry, maxBuffer) {
                 data = JSON.stringify(data);
             }
             if (event) {
-                saveWrite(res, 'event: ' + event + '\n');
+                saveWrite(res, 'event: ' + event + '\n', maxBuffer);
             }
             if (id !== undefined) {
-                saveWrite(res, 'id: ' + id + '\n');
+                saveWrite(res, 'id: ' + id + '\n', maxBuffer);
             }
-            saveWrite(res, 'data: ' + data + '\n\n');
+            saveWrite(res, 'data: ' + data + '\n\n', maxBuffer);
         };
 
         // write 2kB of padding (for IE) and a reconnection timeout
@@ -58,7 +58,7 @@ module.exports = function InitSSE(retry, maxBuffer) {
     };
 };
 
-function saveWrite(res, str) {
+function saveWrite(res, str, maxBuffer) {
     if (res.finished) {
         return false;
     }
